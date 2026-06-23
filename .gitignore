@@ -1,0 +1,46 @@
+# Generated outputs - bleiben auf dem Stick, nicht in git
+output/captures/*
+output/handshakes/*
+output/scans/*
+output/cracked/*
+output/reports/*
+output/forensics/*
+output/audit.log
+!output/*/.gitkeep
+
+# Bootstrap-Downloads
+tools/windows-portable/_downloads/*
+tools/windows-portable/*/
+!tools/windows-portable/.gitkeep
+
+# Geklonte Repos
+repos/*/
+!repos/manifest.yaml
+!repos/.gitkeep
+
+# NPM
+npm-tools/node_modules/
+npm-tools/package-lock.json
+npm-tools/package.json
+
+# Wordlists (zu gross)
+wordlists/rockyou.txt
+wordlists/seclists/
+wordlists/custom/*.txt
+!wordlists/.gitkeep
+!wordlists/custom/.gitkeep
+
+# Engagement-Scope-PDFs (vertraulich)
+authorized-targets/engagements/*
+!authorized-targets/engagements/.gitkeep
+
+# OS-Kruempel
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*~

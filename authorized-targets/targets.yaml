@@ -1,0 +1,59 @@
+# Authorized Targets - ZENTRALE Whitelist fuer das Toolkit
+#
+# Jedes aktive Script prueft hier nach. Targets die nicht hier stehen werden
+# vom Toolkit verweigert. Eintrag wird per substring match gegen das uebergebene
+# Target geprueft.
+#
+# Eintragsformat (jedes Feld optional):
+#   - id: kurzer-name
+#     scope: IP/Range/Hostname/SSID/BSSID
+#     type: own_device | own_network | wifi_ssid | wifi_bssid | lab | engagement | ctf
+#     valid_until: 2026-12-31     # ISO date, leer = unbegrenzt
+#     authorization: doku-pfad oder freitext
+#     notes: freitext
+#
+# WICHTIG:
+# - Eintraege NUR fuer Ziele wo schriftliche/dokumentierte Erlaubnis vorliegt
+# - Bei beruflichen Engagements: Scope-PDF nach authorized-targets/engagements/
+# - Nach Abschluss eines Engagements: Eintrag wieder entfernen
+
+targets:
+  # --- Eigene Geraete ---
+  # - id: home-router
+  #   scope: 192.168.1.1
+  #   type: own_device
+  #   authorization: own_property
+  #   notes: Eigener Router, vollstaendige Kontrolle
+
+  # - id: home-lan
+  #   scope: 192.168.1.0/24
+  #   type: own_network
+  #   authorization: own_property
+
+  # --- WiFi ---
+  # - id: home-wifi
+  #   scope: MeinHeimWLAN
+  #   type: wifi_ssid
+  #   authorization: own_property
+
+  # --- Lab ---
+  # - id: pentest-lab
+  #   scope: 10.10.10.0/24
+  #   type: lab
+  #   authorization: isolated_vlan
+  #   notes: Eigenes Labor, kein Internet-Routing
+
+  # --- Engagements ---
+  # - id: acme-2026q3
+  #   scope: webapp.acme.example
+  #   type: engagement
+  #   valid_until: 2026-09-30
+  #   authorization: engagements/2026q3-acme-roe.pdf
+  #   notes: Webapp-Pentest, externe IPs ausgeschlossen
+
+  # --- CTF / Training ---
+  # - id: htb
+  #   scope: 10.10.0.0/16
+  #   type: ctf
+  #   authorization: htb_subscription
+  #   notes: HackTheBox VPN Range
