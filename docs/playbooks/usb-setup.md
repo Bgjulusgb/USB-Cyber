@@ -95,3 +95,8 @@ sudo umount /mnt/p
   `persistence.conf` mit `/ union` (Zeilenende beachten!)
 - **TOOLKIT in Kali nicht beschreibbar:** mount-options `uid=1000,gid=1000` setzen
 - **exFAT in Linux:** ggf. `sudo apt install exfatprogs` nachinstallieren
+
+
+
+
+https://copilot.microsoft.com/shares/pages/b1xxomDFSfL4cQXn9VSRJ
