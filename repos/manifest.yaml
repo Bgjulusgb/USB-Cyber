@@ -1,0 +1,76 @@
+# Manifest fuer bootstrap.sh
+# Pflegt GitHub-Repos, NPM-Pakete und Windows-Portable-Downloads.
+# bootstrap.sh ist idempotent: clones werden zu pulls, Downloads werden geskippt
+# wenn die Zieldatei bereits existiert.
+
+github_repos:
+  # Wordlists & Payloads
+  - url: https://github.com/danielmiessler/SecLists
+    dest: seclists
+  - url: https://github.com/swisskyrepo/PayloadsAllTheThings
+    dest: payloads
+
+  # Network / AD
+  - url: https://github.com/Pennyw0rth/NetExec
+    dest: netexec
+  - url: https://github.com/fortra/impacket
+    dest: impacket
+  - url: https://github.com/cddmp/enum4linux-ng
+    dest: enum4linux-ng
+
+  # WiFi
+  - url: https://github.com/derv82/wifite2
+    dest: wifite2
+  - url: https://github.com/ZerBea/hcxtools
+    dest: hcxtools
+  - url: https://github.com/ZerBea/hcxdumptool
+    dest: hcxdumptool
+
+  # Web / Recon
+  - url: https://github.com/bettercap/bettercap
+    dest: bettercap
+  - url: https://github.com/projectdiscovery/nuclei
+    dest: nuclei
+  - url: https://github.com/projectdiscovery/subfinder
+    dest: subfinder
+  - url: https://github.com/projectdiscovery/httpx
+    dest: httpx
+  - url: https://github.com/projectdiscovery/naabu
+    dest: naabu
+  - url: https://github.com/owasp-amass/amass
+    dest: amass
+
+  # Hash-Identification
+  - url: https://github.com/HashPals/Name-That-Hash
+    dest: name-that-hash
+
+  # OSINT
+  - url: https://github.com/laramies/theHarvester
+    dest: theHarvester
+
+npm_packages:
+  - wappalyzer
+  - retire
+  - lighthouse
+
+windows_portable:
+  # URL Platzhalter (X.XX) muss vor Download manuell auf aktuelle Version gesetzt werden.
+  # In docs/playbooks/windows-tools.md sind die offiziellen Download-Seiten verlinkt.
+  - name: nmap
+    url: https://nmap.org/dist/nmap-7.95-win32.zip
+    skip_if_placeholder: true
+  - name: wireshark
+    url: https://2.na.dl.wireshark.org/win64/Wireshark-4.4.0-x64.exe
+    skip_if_placeholder: true
+  - name: hashcat
+    url: https://hashcat.net/files/hashcat-6.2.6.7z
+    skip_if_placeholder: true
+  - name: john
+    url: https://www.openwall.com/john/k/john-1.9.0-jumbo-1-win64.7z
+    skip_if_placeholder: true
+  - name: putty
+    url: https://the.earth.li/~sgtatham/putty/latest/w64/putty.zip
+    skip_if_placeholder: false
+  - name: sysinternals
+    url: https://download.sysinternals.com/files/SysinternalsSuite.zip
+    skip_if_placeholder: false
